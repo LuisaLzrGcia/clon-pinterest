@@ -292,10 +292,6 @@ main {
     padding: 5%;
 }
 
-.box-guardar:hover{
-    background-color: #E60023;
-}
-
 .box-guardar input {
     background-color: transparent;
     margin: 1%;
