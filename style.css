@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
 }
 
 /*-------------Navegador------------*/
-#navbar-pinterest {
+.navbar-pinterest {
     height: 80px;
     display: flex;
     justify-content: center;
@@ -22,7 +21,7 @@ body {
     left: 0;
     position: fixed;
     right: 0;
-    z-index: 100;
+    z-index: 999;
     top: 0px;
     background-color: white;
     box-shadow: 0 3px 3px rgb(50 50 93 / 5%), 0 3px 3px rgb(0 0 0 / 7%);
@@ -59,11 +58,11 @@ nav .today:hover {
     background-color: #EFEFEF;
 }
 
-#mobile-down{
+.mobile-down{
     display:none
 }
 
-#mobile-search{
+.mobile-search{
     display: none;
 }
 
@@ -76,16 +75,16 @@ nav .today:hover {
     align-items: center;
 }
 
-#pinterest-icon {
+.pinterest-icon {
     border-radius: 50%;
 }
 
-#navbar-pinterest img {
+.navbar-pinterest img {
     width: 30px;
     height: fit-content;
 }
 
-a>#pinterest-icon {
+a>.pinterest-icon {
     width: 24px;
 }
 
@@ -127,7 +126,7 @@ a>#pinterest-icon {
 
 .finder {
     background-color: transparent;
-    color: #333;
+    color: .333;
     font-weight: normal;
     height: fit-content;
     outline: none;
@@ -145,26 +144,26 @@ a>#pinterest-icon {
     align-items: center;
 }
 
-#notifications img,
-#message img,
-#profile-img img {
+.notifications img,
+.message img,
+.profile-img img {
     width: 24px;
     height: 24px;
 }
 
-#options img {
+.options img {
     width: 12px;
     height: 12px;
 }
 
-#notifications,
-#message,
-#profile-img {
+.notifications,
+.message,
+.profile-img {
     border-radius: 50%;
     padding: 12px;
 }
 
-#options {
+.options {
     border-radius: 50%;
     padding: 2px;
     height: 24px;
@@ -174,38 +173,39 @@ a>#pinterest-icon {
     align-items: center;
 }
 
-#notifications:hover,
-#message:hover,
-#profile-img:hover {
+.notifications:hover,
+.message:hover,
+.profile-img:hover {
     background-color: rgb(240, 240, 240);
     border-radius: 50%;
     padding: 12px;
 }
 
-.icon-right #options:hover {
+.icon-right .options:hover {
     background-color: rgb(240, 240, 240);
     border-radius: 50%;
     padding: 10px;
 }
 
-#profile-img>img {
+.profile-img>img {
     border-radius: 100%;
 
 }
 
-#profile-img,
-#options>img {
+.profile-img,
+.options>img {
     border-radius: 50%;
 }
 
 /*-------------Contentendedor de images------------*/
 
 main {
-    padding: 0px 45px;
+    padding: 0vw 5vw;
     margin-top: 80px
 }
 
-#content {
+/*Contenedor de todas las imagenes*/
+.content {
     display: flex;
     height: 200vw;
     align-items: center;
@@ -215,30 +215,27 @@ main {
     align-content: center;
 }
 
-#content div {
+/*Contendedor de cada una de las imagenes*/
+.content div {
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 19%;
-    height: max-content;
+    position: relative;
+    height: auto;
     cursor: zoom-in;
 }
 
-#content img {
+/*Imagenes del content*/
+.card-image img {
     width: 100%;
+    height: 100%;
     border-radius: 5%;
-    z-index: 20;
+    z-index: 100;
 }
-
-.card-image {
-    overflow: auto;
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.card-image>#box-hover {
+/*Capa del hover*/
+.card-image>.box-hover {
     position: absolute;
     overflow: hidden;
     height: 100%;
@@ -252,10 +249,11 @@ main {
     padding-left: 5%;
     padding-right: 5%;
     background-color: rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    z-index: 50;
+    transition: all 500ms ease-out;
 }
-
-#box-hover>div {
+/*Cajas de la capa hover*/
+.box-hover>div {
     display: flex;
     width: auto;
     flex-direction: row;
@@ -265,36 +263,40 @@ main {
 }
 
 /*HOVER*/
-#content img:hover {
-    z-index: 1;
+.card-image img:hover {
+    z-index: 10;
     position: relative;
 }
 
 /*Iconos de la capa hover*/
 
-#box-hover>#box-up {
+.box-hover>.box-up {
     width: 100%;
     color: white;
 }
 
-#box-up>#box-perfil {
+.box-up>.box-perfil {
     margin-top: 0px;
     padding-left: 3%;
 }
 
-#box-up>#box-perfil>img {
+.box-up>.box-perfil>img {
     margin-left: 25%;
     width: 35%;
 }
 
-#box-up>#box-guardar {
+.box-up>.box-guardar {
     background-color: #ff2b40;
     width: fit-content;
     border-radius: 30px;
     padding: 5%;
 }
 
-#box-guardar input {
+.box-guardar:hover{
+    background-color: #E60023;
+}
+
+.box-guardar input {
     background-color: transparent;
     margin: 1%;
     border: none;
@@ -303,7 +305,7 @@ main {
     color: white;
 }
 
-#box-hover>#box-down {
+.box-hover>.box-down {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -314,11 +316,11 @@ main {
     margin-right: 0px;
 }
 
-#box-down {
+.box-down {
     padding-left: 10%;
 }
 
-#box-down>div {
+.box-down>div {
     background-color: #E1E1E1;
     margin-right: 5px;
     border-radius: 100%;
@@ -329,25 +331,25 @@ main {
 
 @media screen and (max-width: 1115px) {
 
-    #content {
+    .content {
         height: 300vw;
     }
 
-    #content div {
+    .content div {
         width: 22%;
     }
 
-    #box-up>#box-perfil {
+    .box-up>.box-perfil {
         padding-left: 10px;
     }
 
-    #box-down>div {
+    .box-down>div {
         padding: 5px;
         width: auto;
         height: auto;
     }
 
-    #box-down>div>img {
+    .box-down>div>img {
         width: 20px;
         height: 20px;
     }
@@ -356,21 +358,21 @@ main {
 
 @media screen and (max-width: 1000px) {
 
-    #content {
+    .content {
         height: 500vw;
     }
 
-    #content div {
+    .content div {
         width: 30%;
     }
 
-    #box-down>div {
+    .box-down>div {
         padding: 5px;
         width: auto;
         height: auto;
     }
 
-    #box-down>div>img {
+    .box-down>div>img {
         width: 20px;
         height: 20px;
     }
@@ -378,21 +380,21 @@ main {
 
 @media screen and (max-width: 750px) {
 
-    #content {
+    .content {
         height: 1000vw;
     }
 
-    #content div {
+    .content div {
         width: 40%;
     }
 
-    #box-down>div {
+    .box-down>div {
         padding: 5px;
         width: auto;
         height: auto;
     }
 
-    #box-down>div>img {
+    .box-down>div>img {
         width: 20px;
         height: 20px;
     }
@@ -400,11 +402,11 @@ main {
 
 @media screen and (max-width: 680px) {
 
-    #content {
+    .content {
         height: 1200vw;
     }
 
-    #content div {
+    .content div {
         width: 44%;
     }
 
@@ -430,28 +432,28 @@ main {
         color: black;
     }
 
-    nav #mobile-down{
+    nav .mobile-down{
         display: block;
         margin-left: 5px;
         width: 15px;
         height: auto;
     }
 
-    nav #mobile-search{
+    nav .mobile-search{
         display: block;
     }
     
-    nav #mobile-search >img{
+    nav .mobile-search >img{
         width: 24px;
         height: 24px;
     }
 
-    #mobile-search {
+    .mobile-search {
     border-radius: 50%;
     padding: 12px;
     }
 
-    #mobile-search:hover {
+    .mobile-search:hover {
     background-color: rgb(240, 240, 240);
     border-radius: 50%;
     padding: 12px;
@@ -464,31 +466,32 @@ main {
 
 @media screen and (max-width: 550px) {
 
-    #content {
+    .content {
         height: 1200vw;
     }
 
-    #content div {
+    .content div {
         width: 48%;
     }
 }
 
 @media screen and (max-width: 470px){
-    #content img:hover {
+    .content img:hover {
         z-index: 20;
         position: relative;
     }
 }
 
 @media screen and (max-width: 410px) {
-    #message, #notifications{
+    .message, .notifications{
         display: none;
     }
 }
 
 @media screen and (max-width: 320px) {
-    nav #mobile-down, #profile-img{
+    nav .mobile-down, .profile-img{
         display: none;
     }
 
 }
+
