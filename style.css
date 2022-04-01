@@ -58,11 +58,11 @@ nav .today:hover {
     background-color: #EFEFEF;
 }
 
-.mobile-down{
-    display:none
+.mobile-down {
+    display: none
 }
 
-.mobile-search{
+.mobile-search {
     display: none;
 }
 
@@ -208,7 +208,6 @@ main {
 .content {
     display: flex;
     height: 200vw;
-    align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: column;
@@ -216,15 +215,11 @@ main {
 }
 
 /*Contendedor de cada una de las imagenes*/
-.content div {
+.content .card-image {
     margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 19%;
-    position: relative;
-    height: auto;
     cursor: zoom-in;
+    position: relative;
 }
 
 /*Imagenes del content*/
@@ -232,168 +227,166 @@ main {
     width: 100%;
     height: 100%;
     border-radius: 5%;
-    z-index: 100;
-}
-/*Capa del hover*/
-.card-image>.box-hover {
-    position: absolute;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    border-radius: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 50;
-    transition: all 500ms ease-out;
-}
-/*Cajas de la capa hover*/
-.box-hover>div {
-    display: flex;
-    width: auto;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: stretch;
-    justify-content: space-between;
 }
 
 /*HOVER*/
-.card-image img:hover {
-    z-index: 10;
-    position: relative;
+
+.card-image:hover {
+    filter: brightness(90%);
+}
+
+.card-image:hover .profile {
+    display: block;
+    cursor: pointer;
+}
+
+.card-image:hover .box-save {
+    display: block;
+}
+
+.card-image:hover .box-upload {
+    display: block;
+    cursor: pointer;
+}
+
+.card-image:hover .box-options {
+    display: block;
+    cursor: pointer;
 }
 
 /*Iconos de la capa hover*/
-
-.box-hover>.box-up {
-    width: 100%;
+.profile {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    padding: 12px;
+    display: inline;
     color: white;
+    display: none;
 }
 
-.box-up>.box-perfil {
-    margin-top: 0px;
-    padding-left: 3%;
+.profile>img {
+    width: 8%;
+    padding-left: 5px;
 }
 
-.box-up>.box-perfil>img {
-    margin-left: 25%;
-    width: 35%;
+.box-save {
+    display: none;
 }
 
-.box-up>.box-guardar {
-    background-color: #ff2b40;
-    width: fit-content;
-    border-radius: 30px;
-    padding: 5%;
-}
-
-.box-guardar input {
-    background-color: transparent;
-    margin: 1%;
+.box-save>input {
+    background-color: red;
     border: none;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
-}
-
-.box-hover>.box-down {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 1%;
+    position: absolute;
+    width: fit-content;
     height: fit-content;
-    margin-left: 50%;
-    margin-bottom: 0px;
-    margin-right: 0px;
+    padding: 12px;
+    border-radius: 20px;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
 }
 
-.box-down {
-    padding-left: 10%;
+.box-save>input:hover {
+    background-color: rgb(195, 64, 64);
 }
 
-.box-down>div {
-    background-color: #E1E1E1;
-    margin-right: 5px;
+.box-upload,
+.box-options {
+    display: none;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: white;
     border-radius: 100%;
-    padding: 5px;
-    width: 33%;
+    padding: 6px;
+}
+
+.box-upload {
+    bottom: 8px;
+    right: 50px;
+}
+
+.box-options {
+    bottom: 8px;
+    right: 8px;
+}
+
+.box-upload>img {
+    width: 100%;
     height: auto;
 }
 
+.box-options>img {
+    width: 100%;
+}
+
 @media screen and (max-width: 1115px) {
+    main {
+        margin-top: 85px;
+        margin: 7vw;
+    }
 
     .content {
-        height: 300vw;
+        height: 270vw;
     }
 
-    .content div {
-        width: 22%;
+    .content .card-image {
+        width: 25%;
     }
 
-    .box-up>.box-perfil {
-        padding-left: 10px;
+    .box-upload,
+    .box-options {
+        width: 33px;
+        height: 33px;
+        padding: 6px;
     }
-
-    .box-down>div {
-        padding: 5px;
-        width: auto;
-        height: auto;
-    }
-
-    .box-down>div>img {
-        width: 20px;
-        height: 20px;
-    }
-
 }
 
 @media screen and (max-width: 1000px) {
-
-    .content {
-        height: 500vw;
+    main {
+        margin-top: 80px;
+        margin-left: 7vw;
+        margin-right: 7vw;
     }
 
-    .content div {
+    .content {
+        height: 450vw;
+    }
+
+    .content .card-image {
         width: 30%;
     }
 
-    .box-down>div {
-        padding: 5px;
-        width: auto;
-        height: auto;
-    }
-
-    .box-down>div>img {
-        width: 20px;
-        height: 20px;
+    .box-upload,
+    .box-options {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
     }
 }
 
 @media screen and (max-width: 750px) {
+    main {
+        margin-top: 80px;
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
 
     .content {
-        height: 1000vw;
+        height: 1050vw;
     }
 
-    .content div {
-        width: 40%;
+    .content .card-image {
+        width: 45%;
     }
 
-    .box-down>div {
-        padding: 5px;
-        width: auto;
-        height: auto;
-    }
-
-    .box-down>div>img {
-        width: 20px;
-        height: 20px;
-    }
 }
 
 @media screen and (max-width: 680px) {
@@ -418,46 +411,57 @@ main {
         display: none;
     }
 
-    nav>.nav-bttn{
+    nav>.nav-bttn {
         background-color: white;
         color: black;
     }
 
-    nav>.nav-bttn>input{
+    nav>.nav-bttn>input {
         background-color: transparent;
         color: black;
     }
 
-    nav .mobile-down{
+    nav .mobile-down {
         display: block;
         margin-left: 5px;
         width: 15px;
         height: auto;
     }
 
-    nav .mobile-search{
+    nav .mobile-search {
         display: block;
     }
-    
-    nav .mobile-search >img{
+
+    nav .mobile-search>img {
         width: 24px;
         height: 24px;
     }
 
     .mobile-search {
-    border-radius: 50%;
-    padding: 12px;
+        border-radius: 50%;
+        padding: 12px;
     }
 
     .mobile-search:hover {
-    background-color: rgb(240, 240, 240);
-    border-radius: 50%;
-    padding: 12px;
+        background-color: rgb(240, 240, 240);
+        border-radius: 50%;
+        padding: 12px;
     }
 
-    .nav-bttn:hover{
+    .nav-bttn:hover {
         background-color: rgb(240, 240, 240);
     }
+
+    .box-upload,
+    .box-options {
+        background-color: transparent;
+    }
+
+    .box-upload img,
+    .box-options img{
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 550px) {
@@ -471,7 +475,7 @@ main {
     }
 }
 
-@media screen and (max-width: 470px){
+@media screen and (max-width: 470px) {
     .content img:hover {
         z-index: 20;
         position: relative;
@@ -479,15 +483,18 @@ main {
 }
 
 @media screen and (max-width: 410px) {
-    .message, .notifications{
+
+    .message,
+    .notifications {
         display: none;
     }
 }
 
 @media screen and (max-width: 320px) {
-    nav .mobile-down, .profile-img{
+
+    nav .mobile-down,
+    .profile-img {
         display: none;
     }
 
 }
-
